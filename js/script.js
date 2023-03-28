@@ -51,6 +51,7 @@ function gameEngine(){
         snakeArr=[{x:13,y:15}];
         musicSound.play();
         score=0;
+        document.getElementById('scoreBox').innerHTML="Score "+score;
     }
 
     // if you have eaten the food, increment the score and regenerate the food
@@ -64,7 +65,8 @@ function gameEngine(){
             localStorage.setItem("hiscore",JSON.stringify(hiscoreval));
             highscore.innerHTML="Hi Score: "+hiscoreval;
         }
-        score.innerHTML="Score "+score;
+        //console.log("yes");
+        document.getElementById('scoreBox').innerHTML="Score "+score;
         snakeArr.unshift({x:snakeArr[0].x+inputDir.x,y:snakeArr[0].y+inputDir.y});
         let a=2;
         let b=16;
